@@ -1,15 +1,16 @@
 package entities;
 
-public class DVD extends Livre {
+public abstract class DVD extends Livre {
     private boolean adulte;
+    private String titreDVD;
 
-    public DVD(String id, String titre, boolean adulte) {
-        super(id, titre);
+    public DVD(String titre, boolean adulte) {
+        super();
         this.adulte = adulte;
     }
 
     @Override
-    public synchronized void emprunt(Abonne ab) throws Exception {
+    public synchronized void emprunt(Abonne ab) throws EmpruntException {
         if (adulte) {
             long ageMilli = System.currentTimeMillis() - ab.getDateNaissance().getTime();
             if (ageMilli < 504911232000L) {
