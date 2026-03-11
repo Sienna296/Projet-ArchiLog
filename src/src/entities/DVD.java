@@ -1,6 +1,6 @@
 package entities;
 
-public abstract class DVD extends Livre {
+public class DVD extends Livre {
     private boolean adulte;
     private String titreDVD;
 

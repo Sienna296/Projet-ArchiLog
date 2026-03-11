@@ -1,6 +1,9 @@
 package serveur;
 
+import client.Document;
 import entities.Abonne;
+import entities.DVD;
+import entities.Livre;
 
 import java.net.*;
 import java.util.*;

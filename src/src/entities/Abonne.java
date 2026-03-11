@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -16,6 +17,7 @@ public class Abonne implements Serializable {
         this.dateNaiss = dateNaissance;
         this.banni = false;
     }
+
 
     public int getNumero() { return numero; }
     public Date getDateNaissance() { return dateNaiss; }

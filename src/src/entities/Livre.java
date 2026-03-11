@@ -3,7 +3,7 @@ package entities;
 
 import javax.swing.text.Document;
 
-public abstract class Livre implements Document {
+public class Livre implements Document {
 
     protected int nbPages;
 
