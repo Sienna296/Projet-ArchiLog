@@ -13,7 +13,6 @@ public class ServeurGeneral {
     public static Map<String, Document> mapDocuments = new HashMap<>();
 
     public static void main(String[] args) {
-        // --- INITIALISATION DES DONNÉES ---
         listeAbonnes.add(new Abonne(1, "Geronimo", LocalDate.of(1829, 6, 16)));
         listeAbonnes.add(new Abonne(2, "Sitting Bull", LocalDate.of(1831, 1, 1)));
 

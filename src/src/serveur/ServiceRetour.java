@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 import entities.Document;
-import exceptions.RetourException; // Adapte les imports selon tes packages
+import exceptions.RetourException;
 
 
 public class ServiceRetour implements Runnable {
@@ -22,18 +22,14 @@ public class ServiceRetour implements Runnable {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
             if (in.hasNextLine()) {
-                // 1. Lecture de l'unique information nécessaire
                 String idDoc = in.nextLine();
 
-                // 2. Recherche de l'objet document
                 Document doc = ServeurGeneral.trouverDoc(idDoc);
 
-                // 3. Logique métier
                 if (doc == null) {
                     out.println("Erreur : entities.Document inexistant.");
                 } else {
                     try {
-                        // Tentative de retour
                         doc.retour();
                         out.println("Succès : Le document " + idDoc + " a bien été retourné.");
                     } catch (RetourException e) {
@@ -45,7 +41,7 @@ public class ServiceRetour implements Runnable {
             System.err.println("Erreur de communication lors d'un retour : " + e.getMessage());
         } finally {
             try {
-                socket.close(); // On ferme la connexion [cite: 604]
+                socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
