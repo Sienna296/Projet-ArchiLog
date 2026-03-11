@@ -1,15 +1,14 @@
 package serveur;
 
-import client.Document;
+import entities.Document;
 import entities.Abonne;
 import entities.DVD;
 import entities.Livre;
 
-import java.net.*;
 import java.util.*;
 import java.time.LocalDate;
 
-public class Main {
+public class ServeurGeneral {
     public static List<Abonne> listeAbonnes = new ArrayList<>();
     public static Map<String, Document> mapDocuments = new HashMap<>();
 

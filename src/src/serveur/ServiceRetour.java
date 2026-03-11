@@ -30,7 +30,7 @@ public class ServiceRetour implements Runnable {
 
                 // 3. Logique métier
                 if (doc == null) {
-                    out.println("Erreur : client.Document inexistant.");
+                    out.println("Erreur : entities.Document inexistant.");
                 } else {
                     try {
                         // Tentative de retour

@@ -9,8 +9,6 @@ import entities.Abonne;
 import entities.Document;
 import exceptions.EmpruntException;
 
-import static jdk.javadoc.internal.doclets.formats.html.markup.HtmlStyle.exceptions;
-
 public class ServiceEmprunt implements Runnable {
     private Socket socket;
 
@@ -27,13 +25,13 @@ public class ServiceEmprunt implements Runnable {
                 int numAb = Integer.parseInt(in.nextLine());
                 String idDoc = in.nextLine();
 
-                Abonne ab = serveur.Main.trouverAbonne(numAb);
-                Document doc = serveur.Main.trouverDoc(idDoc);
+                Abonne ab = serveur.ServeurGeneral.trouverAbonne(numAb);
+                Document doc = serveur.ServeurGeneral.trouverDoc(idDoc);
 
                 if (ab == null) {
                     out.println("Erreur : Abonné inconnu.");
                 } else if (doc == null) {
-                    out.println("Erreur : client.Document inexistant.");
+                    out.println("Erreur : entities.Document inexistant.");
                 } else {
                     try {
                         doc.emprunt(ab);

@@ -1,6 +1,4 @@
-package client;
-
-import entities.Abonne;
+package entities;
 
 public interface Document {
     Integer idDoc();
